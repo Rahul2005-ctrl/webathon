@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Golden Crumb Bakery — The Journey</title>
+  <meta name="description" content="Scroll to fly through the world of Golden Crumb Bakery." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* Premium Theme Overrides */
+    :root, .sw-root {
+      --sw-font-display: 'Playfair Display', serif !important;
+      --sw-font-body: 'Outfit', sans-serif !important;
+      --sw-bg: #FDFBF7;          /* Soft Vanilla */
+      --sw-ink: #2C2621;         /* Deep Roast */
+      --sw-ink-soft: #7C7166;
+      --sw-accent: #D37B40;      /* Golden Crust */
+    }
+    
+    /* Premium Bakery Footer */
+    .bakery-footer {
+      position: relative;
+      z-index: 200; /* Slides up over the fixed video */
+      background: var(--sw-ink);
+      color: var(--sw-bg);
+      padding: clamp(50px, 6vw, 80px) clamp(24px, 5vw, 64px);
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
+      font-family: var(--sw-font-body);
+      margin-top: -40px; /* Slight overlap for rounding */
+    }
+    .footer-newsletter {
+      max-width: 1200px;
+      margin: 0 auto 50px;
+      text-align: center;
+      padding-bottom: 50px;
+      border-bottom: 1px solid color-mix(in srgb, var(--sw-bg) 10%, transparent);
+    }
+    .footer-newsletter h3 {
+      font-family: var(--sw-font-display);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin: 0 0 12px;
+      color: #fff;
+    }
+    .footer-newsletter p {
+      color: color-mix(in srgb, var(--sw-bg) 70%, transparent);
+      margin: 0 0 28px;
+      font-size: clamp(1rem, 1.2vw, 1.15rem);
+    }
+    .newsletter-form {
+      display: flex;
+      max-width: 520px;
+      margin: 0 auto;
+      gap: 12px;
+    }
+    .newsletter-form input {
+      flex: 1;
+      padding: 16px 24px;
+      border-radius: 999px;
+      border: 1px solid color-mix(in srgb, var(--sw-bg) 20%, transparent);
+      background: color-mix(in srgb, var(--sw-bg) 5%, transparent);
+      color: #fff;
+      font-family: var(--sw-font-body);
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .newsletter-form input::placeholder {
+      color: color-mix(in srgb, var(--sw-bg) 40%, transparent);
+    }
+    .newsletter-form input:focus {
+      border-color: var(--sw-accent);
+    }
+    .newsletter-form button {
+      padding: 16px 36px;
+      border-radius: 999px;
+      border: none;
+      background: var(--sw-accent);
+      color: #fff;
+      font-family: var(--sw-font-body);
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .newsletter-form button:hover {
+      transform: translateY(-2px);
+      background: color-mix(in srgb, var(--sw-accent) 80%, #fff);
+    }
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-brand h2 {
+      font-family: var(--sw-font-display);
+      font-size: 2.2rem;
+      margin: 0 0 16px 0;
+      color: var(--sw-accent);
+    }
+    .footer-brand p {
+      max-width: 320px;
+      line-height: 1.6;
+      color: color-mix(in srgb, var(--sw-bg) 70%, transparent);
+    }
+    .footer-links {
+      display: flex;
+      gap: clamp(40px, 8vw, 100px);
+    }
+    .footer-links h3 {
+      font-family: var(--sw-font-display);
+      font-size: 1.3rem;
+      margin: 0 0 20px 0;
+      color: #fff;
+    }
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer-links a {
+      color: color-mix(in srgb, var(--sw-bg) 70%, transparent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover {
+      color: var(--sw-accent);
+    }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 60px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid color-mix(in srgb, var(--sw-bg) 15%, transparent);
+      text-align: center;
+      color: color-mix(in srgb, var(--sw-bg) 50%, transparent);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="top"></div>
+  <div id="world"></div>
+
+  <footer class="bakery-footer">
+    <div class="footer-newsletter">
+      <h3>Fresh out of the oven.</h3>
+      <p>Subscribe to our newsletter for exclusive pastry drops, seasonal specials, and bakery news.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email address" />
+        <button type="button">Subscribe</button>
+      </form>
+    </div>
+    
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h2>Golden Crumb Bakery</h2>
+        <p>Artisan breads and pastries baked fresh daily with love and the finest ingredients.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="#">Our Menu</a></li>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Locations</a></li>
+            <li><a href="#">Catering</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Connect</h3>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">TikTok</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Golden Crumb Bakery. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="scrub-engine-video.js?v=13"></script>
+  <script>
+    mountLetsScroll(document.getElementById('world'), {
+      brand: { name: 'Golden Crumb Bakery', href: '#top' },
+      cta: { label: 'Order now', href: '#finale' },
+      hint: 'scroll to fly in',
+      diveScroll: 1.6, // Increased to make the flight slightly slower/smoother
+      connScroll: 0.9,
+      crossfade: 0.20, // Increased for a smoother blend between scenes
+      sections: [
+        {
+          id: 'scene1', label: 'The Field',
+          still: 'assets/still_1.jpeg',
+          clip: 'assets/vid/leg_1_smooth.mp4',
+          accent: '#000000',
+          eyebrow: 'Our Roots',
+          title: 'Where It All Begins.',
+          body: 'Bathed in golden sunlight, our ingredients are sourced directly from sustainable, local farms.',
+          tags: ['Sustainably Sourced', 'Organic', 'Local'],
+        },
+        {
+          id: 'scene2', label: 'The Mill',
+          still: 'assets/still_2.jpeg',
+          clip: 'assets/vid/leg_2_smooth.mp4',
+          accent: '#000000',
+          eyebrow: 'The Foundation',
+          title: 'Heritage Milled.',
+          body: 'We rely on traditional stone-grinding techniques to preserve the natural flavor and nutrients of every grain.',
+          tags: ['Stone-ground', 'Unbleached', 'Heritage'],
+        },
+        {
+          id: 'scene3', label: 'The Process',
+          still: 'assets/still_3.jpeg',
+          clip: 'assets/vid/leg_3_smooth.mp4',
+          accent: '#825E5C',
+          eyebrow: 'The Craft',
+          title: 'Kneaded by Hand.',
+          body: 'Before dawn breaks, our artisan bakers are already at work, folding love and patience into every batch of dough.',
+          tags: ['Artisanal', 'Hand-crafted', 'Slow-fermented'],
+        },
+        {
+          id: 'scene4', label: 'The Oven',
+          still: 'assets/still_4.jpeg',
+          clip: 'assets/vid/leg_4_smooth.mp4',
+          accent: '#FEA82F',
+          eyebrow: 'The Hearth',
+          title: 'Forged in Fire.',
+          body: 'Baked to a perfect golden crust in our traditional brick ovens, delivering that unmistakable warm, rustic crunch.',
+          tags: ['Wood-fired', 'Fresh Baked', 'Warm'],
+        },
+        {
+          id: 'scene5', label: 'The Display',
+          still: 'assets/still_5.jpeg',
+          clip: 'assets/vid/leg_5_smooth.mp4',
+          accent: '#5A8F7B',
+          eyebrow: 'The Art',
+          title: 'Delicate Perfection.',
+          body: 'From buttery, flaky croissants to rich, decadent tarts—each pastry is a handcrafted masterpiece.',
+          tags: ['Viennoiserie', 'Patisserie', 'Decadent'],
+        },
+        {
+          id: 'finale', label: 'The Bakery',
+          still: 'assets/still_6.jpeg',
+          clip: 'assets/vid/leg_6_smooth.mp4',
+          accent: '#D37B40',
+          eyebrow: 'Welcome In',
+          title: 'Your Morning Ritual.',
+          body: 'Step inside and let the aroma of fresh coffee and warm bread start your day right. We\'ve saved you a seat.',
+          tags: [],
+          cta: { primary: { label: 'Visit Us', href: '#' },
+                 secondary: { label: 'Our Menu', href: '#' } },
+        },
+      ],
+      connectors: []
+    });
+  </script>
+</body>
+</html>
